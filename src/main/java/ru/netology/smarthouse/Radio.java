@@ -1,15 +1,15 @@
 package ru.netology.smarthouse;
 
 public class Radio {
+
     private int currentStation;
     private int currentVolume;
-    private int newCurrentStation;
 
     public int getCurrentStation() {
         return currentStation;
     }
 
-    public void setCurrentStation(int currentStation) {
+    public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < 0) {
             newCurrentStation = 0;
         }
@@ -26,11 +26,10 @@ public class Radio {
             currentStation = 0;
         }
     }
+
     public void prevStation() {
         if (currentStation > 0) {
             currentStation = currentStation - 1;
-        }
-        if (currentStation == 0) {
         } else {
             currentStation = 9;
         }
@@ -39,23 +38,24 @@ public class Radio {
     public int getCurrentVolume() {
         return currentVolume;
     }
-    public void setCurrentVolume (int newVolume) {
+
+    public void setCurrentVolume(int newVolume) {
         if (newVolume > 10) {
             newVolume = 10;
         }
         currentVolume = newVolume;
     }
+
     public void plusVolume() {
         if (currentVolume < 10) {
             currentVolume += 1;
         }
     }
+
     public void minusVolume() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
         }
     }
+
 }
-
-
-
